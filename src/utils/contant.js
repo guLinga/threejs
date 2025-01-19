@@ -1,3 +1,5 @@
+import * as THREE from 'three'
+
 const carLength = 8
 
 export const tankContant = {
@@ -20,4 +22,25 @@ export const tankContant = {
   turretWidth: 0.1,
   turretHeight: 0.1,
   turretLength: carLength * 0.75 * 0.2,
+}
+
+export const cubeOrigPoint = new THREE.Vector3(0, 0, 0)
+
+export const cubeContant = {
+  cubeParams: {
+    //魔方参数
+    x: 0,
+    y: 0,
+    z: 0,
+    num: 3,
+    len: 10,
+    colors: [
+      'rgba(255,193,37,1)',
+      'rgba(0,191,255,1)',
+      'rgba(50,205,50,1)',
+      'rgba(178,34,34,1)',
+      'rgba(255,255,0,1)',
+      'rgba(255,255,255,1)',
+    ],
+  },
 }

@@ -29,3 +29,10 @@ export function createTankLight2() {
   light.position.set(1, 2, 4)
   return light
 }
+
+// 魔方的光线
+export function createCubeLight() {
+  const light = new THREE.AmbientLight(0xfefefe, 3)
+  light.position.set(0, 50, 0)
+  return light
+}

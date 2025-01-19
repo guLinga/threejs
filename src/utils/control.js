@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 
 // 设置renderer的大小 和canvas的大小一致 避免像素化
-function resizeRendererToDisplaySize(renderer) {
+export function resizeRendererToDisplaySize(renderer) {
   const canvas = renderer.domElement
   // 获取设备像素比
   const pixelRatio = window.devicePixelRatio
@@ -122,6 +122,26 @@ export function renderTankAnimation(
 
     renderer.render(scene, camera.cam)
 
+    requestAnimationFrame(render)
+  }
+  requestAnimationFrame(render)
+}
+
+// 魔方动画
+export function renderCubeAnimation(renderer, scene, camera) {
+  function render(time) {
+    // 设置绘图缓冲区
+    if (resizeRendererToDisplaySize(renderer)) {
+      // 设置canvas宽高比 避免拉伸变形
+      const canvas = renderer.domElement
+      camera.aspect = canvas.clientWidth / canvas.clientHeight
+      camera.updateProjectionMatrix()
+    }
+    time *= 0.001 // 将时间单位变为秒
+    // objects.forEach((obj) => {
+    //   obj.rotation.y = time
+    // })
+    renderer.render(scene, camera)
     requestAnimationFrame(render)
   }
   requestAnimationFrame(render)

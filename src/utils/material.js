@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+// import planeBackground from '../static/image/planeBackground2.jpg'
+import planeBackground from '../static/image/planeBackground.jpg'
 
 // 材质
 export function createMaterial() {
@@ -46,4 +48,22 @@ export function createTargetMaterial() {
 // 路线的材质
 export function createSineLineMaterial() {
   return new THREE.LineBasicMaterial({ color: 0xff0000 })
+}
+
+// 魔方平面的材质
+export function createPlaneMaterial() {
+  const loader = new THREE.TextureLoader()
+  // 加载纹路图片
+  const texture = loader.load(planeBackground)
+  texture.colorSpace = THREE.SRGBColorSpace
+  return new THREE.MeshBasicMaterial({
+    map: texture,
+  })
+}
+
+// 魔方坐标轴的材质
+export function creatCubeLineMaterial(color = 0x0000ff) {
+  return new THREE.LineBasicMaterial({
+    color,
+  })
 }

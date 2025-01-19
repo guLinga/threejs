@@ -83,3 +83,8 @@ export function createTargetGeometry() {
 export function createSineLineGeometry(points) {
   return new THREE.BufferGeometry().setFromPoints(points)
 }
+
+// 线
+export function createLineGeometry(points) {
+  return new THREE.BufferGeometry().setFromPoints(points)
+}

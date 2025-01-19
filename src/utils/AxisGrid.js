@@ -2,6 +2,8 @@ import * as THREE from 'three'
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
 const gui = new GUI()
 
+// z：蓝色 x：橙色 y：绿色
+
 export function makeAxisGrid(node, label, units) {
   const helper = new AxisGridHelper(node, units)
   gui.add(helper, 'visible').name(label)

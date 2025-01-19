@@ -31,3 +31,18 @@ export function makeCamera(fov = 40) {
   const zFar = 1000
   return new THREE.PerspectiveCamera(fov, aspect, zNear, zFar)
 }
+
+// 魔方相机
+export function createCubeCamera() {
+  const fov = 45 // 角度
+  const aspect = 2
+  const near = 10 // 近面
+  const far = 1000 // 远面
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
+
+  // 设置摄像头位置 x y z
+  camera.position.set(45, 45, 90)
+  // 设置摄像头指向位置
+  camera.lookAt(0, 0, 0)
+  return camera
+}

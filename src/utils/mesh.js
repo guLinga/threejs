@@ -10,6 +10,7 @@ import {
   createTankTurretGeometry,
   createTargetGeometry,
   createSineLineGeometry,
+  createLineGeometry,
 } from './geometry'
 import {
   createMaterial,
@@ -21,6 +22,8 @@ import {
   createTankWheelMaterial,
   createTargetMaterial,
   createSineLineMaterial,
+  createPlaneMaterial,
+  creatCubeLineMaterial,
 } from './material'
 
 // 空节点
@@ -163,4 +166,39 @@ export function createSineLineMesh() {
   splineObject.rotation.x = Math.PI * 0.5
   splineObject.position.y = 0.05
   return [splineObject, curve]
+}
+
+// 魔方的2d平面
+export function createPlaneMesh() {
+  const geometry = createGroundGeometry()
+  const material = createPlaneMaterial()
+  const mesh = new THREE.Mesh(geometry, material)
+  // 设置地的x轴旋转
+  mesh.rotation.x = Math.PI * -0.5
+  mesh.position.y = -20
+  // 也没找到 todo
+  mesh.receiveShadow = true
+  return mesh
+}
+
+// 魔方x轴
+export function createCubeXMesh() {
+  const points = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(300, 0, 0)]
+  const geometry = createLineGeometry(points)
+  const material = creatCubeLineMaterial()
+  return new THREE.Line(geometry, material)
+}
+// 魔方y轴
+export function createCubeYMesh() {
+  const points = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 300, 0)]
+  const geometry = createLineGeometry(points)
+  const material = creatCubeLineMaterial(0x00ff00)
+  return new THREE.Line(geometry, material)
+}
+// 魔方z轴
+export function createCubeZMesh() {
+  const points = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 300)]
+  const geometry = createLineGeometry(points)
+  const material = creatCubeLineMaterial(0x0000ff)
+  return new THREE.Line(geometry, material)
 }
