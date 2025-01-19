@@ -158,9 +158,9 @@ export function renderCubeProcess(canvas) {
   renderer.domElement.addEventListener('mousemove', moveCube, false)
   renderer.domElement.addEventListener('mouseup', stopCube, false)
   //监听触摸事件
-  // renderer.domElement.addEventListener('touchstart', startCube, false)
-  // renderer.domElement.addEventListener('touchmove', moveCube, false)
-  // renderer.domElement.addEventListener('touchend', stopCube, false)
+  renderer.domElement.addEventListener('touchstart', startCube, false)
+  renderer.domElement.addEventListener('touchmove', moveCube, false)
+  renderer.domElement.addEventListener('touchend', stopCube, false)
 
   //魔方操作结束
   function stopCube() {
