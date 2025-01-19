@@ -23,3 +23,11 @@ export function createSunCamera() {
   camera.lookAt(0, 0, 0)
   return camera
 }
+
+// 坦克的相机
+export function makeCamera(fov = 40) {
+  const aspect = 2 // the canvas default
+  const zNear = 0.1
+  const zFar = 1000
+  return new THREE.PerspectiveCamera(fov, aspect, zNear, zFar)
+}

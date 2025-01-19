@@ -16,3 +16,16 @@ export function createSunLight() {
   const light = new THREE.PointLight(color, intensity)
   return light
 }
+
+// 坦克灯光1
+export function createTankLight1() {
+  const light = new THREE.DirectionalLight(0xffffff, 3)
+  light.position.set(0, 20, 0)
+  return light
+}
+// 坦克灯光2
+export function createTankLight2() {
+  const light = new THREE.DirectionalLight(0xffffff, 3)
+  light.position.set(1, 2, 4)
+  return light
+}
